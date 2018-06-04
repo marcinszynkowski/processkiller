@@ -20,6 +20,7 @@ namespace processkiller
         static void Main(string[] args)
         {
             CheckProcess();
+           
             ManagementEventWatcher startWatch = new ManagementEventWatcher(new WqlEventQuery("SELECT * FROM Win32_ProcessStartTrace"));
             startWatch.EventArrived += new EventArrivedEventHandler(startWatch_EventArrived);
             startWatch.Start();
